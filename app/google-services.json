@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1022420408252",
+    "project_id": "atmegatasks",
+    "storage_bucket": "atmegatasks.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022420408252:android:205cc6d6e3c05003933db9",
+        "android_client_info": {
+          "package_name": "com.sanjoo.atmegatasks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1022420408252-dnqkbtrdldufl0q2bpmd1hu6e7kivc78.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWPmnJZW8HcJiVhYIDIYBzq3sb_IIOwwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1022420408252-dnqkbtrdldufl0q2bpmd1hu6e7kivc78.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

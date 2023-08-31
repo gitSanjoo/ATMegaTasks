@@ -1,3 +1,3 @@
 package com.sanjoo.atmegatasks
 
-data class SearchData(val textData:String)
+data class SearchData(var textData:String)
