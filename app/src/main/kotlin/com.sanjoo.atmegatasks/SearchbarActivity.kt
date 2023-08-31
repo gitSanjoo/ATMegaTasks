@@ -1,12 +1,12 @@
 package com.sanjoo.atmegatasks
 
-import androidx.appcompat.app.AppCompatActivity
+import android.database.Cursor
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.sanjoo.atmegatasks.databinding.ActivitySearchbarBinding
 
-class SearchbarActivity : AppCompatActivity() {
+class SearchbarActivity : AppCompatActivity(),TextDataInterface {
 
 //    private lateinit var recyclerView: RecyclerView
 //    private  lateinit var searchView:SearchView
@@ -22,6 +22,7 @@ class SearchbarActivity : AppCompatActivity() {
     private lateinit var theList:ArrayList<SearchData>
     private lateinit var adapter: SearchAdapter
     private lateinit var dbRef:DatabaseReference
+    private lateinit var query:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,8 +34,10 @@ class SearchbarActivity : AppCompatActivity() {
             theList= arrayListOf<SearchData>()
 //        addDataToList()
         getTextData()
-//        adapter= SearchAdapter(theList)
-//        binding.recyclerViewSearch.adapter=adapter
+        adapter= SearchAdapter(theList,this)
+        binding.recyclerViewSearch.adapter=adapter
+
+
 
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -47,6 +50,21 @@ class SearchbarActivity : AppCompatActivity() {
             }
 
         })
+
+//        binding.searchView.setOnSuggestionListener(object : SearchView.OnSuggestionListener {
+//            override fun onSuggestionSelect(position: Int): Boolean {
+//                return true
+//            }
+//
+//            override fun onSuggestionClick(position: Int): Boolean {
+//                val cursor: Cursor = binding.searchView.getSuggestionsAdapter().getCursor()
+//                cursor.moveToPosition(position)
+//                val suggestion: String =
+//                    cursor.getString(2) //2 is the index of col containing suggestion name.
+//                binding.searchView.setQuery(suggestion, true) //setting suggestion
+//                return true
+//            }
+//        })
 
         //arrow click action
 
@@ -96,7 +114,7 @@ class SearchbarActivity : AppCompatActivity() {
                         theList.add(searchData)
                     }
 
-                    adapter = SearchAdapter(theList)
+//                    adapter = SearchAdapter(theList,this)
                     binding.recyclerViewSearch.adapter = adapter
 
 //                val theText=snapshot.getValue()
@@ -108,5 +126,10 @@ class SearchbarActivity : AppCompatActivity() {
             }
 
         })
+    }
+
+    override fun getText(t: String) {
+        binding.searchView.setQuery(t,false)
+
     }
 }
