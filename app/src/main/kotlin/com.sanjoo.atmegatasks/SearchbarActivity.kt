@@ -2,6 +2,7 @@ package com.sanjoo.atmegatasks
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -84,13 +85,15 @@ class SearchbarActivity : AppCompatActivity() {
 //    }
     private fun getTextData(){
          dbRef = FirebaseDatabase.getInstance().getReference("text")
-            .child(FirebaseAuth.getInstance().uid.toString())
+            //.child(FirebaseAuth.getInstance().uid.toString())
         dbRef.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
+                Log.d("fire_onDataChange",snapshot.toString())
                 if(snapshot.exists()) {
                     for (textSnapshot in snapshot.children) {
-                        val theText = textSnapshot.getValue(SearchData::class.java)
-                        theList.add(theText!!)
+                        val theText:String = textSnapshot.value as String
+                        val searchData=SearchData(theText)
+                        theList.add(searchData)
                     }
 
                     adapter = SearchAdapter(theList)
