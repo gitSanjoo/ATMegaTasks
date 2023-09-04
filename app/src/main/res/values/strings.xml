@@ -1,3 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">ATMegaTasks</string>
+    <string name="change_language">Edit Text</string>
 </resources>
