@@ -15,9 +15,6 @@ import java.util.Locale
 class DarkLightModeSwitching : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        val binding:ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
-//        val view: View =binding.root
-//        setContentView(view)
 
         loadLocale()
 
