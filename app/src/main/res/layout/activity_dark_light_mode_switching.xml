@@ -9,6 +9,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorOnPrimary"
     tools:context=".DarkLightModeSwitching">
     <TextView
         android:id="@+id/et_word"
@@ -37,14 +38,32 @@
         android:textOn="English"
         android:textOff="Hindi" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="Button"
-        />
+   <LinearLayout
+       android:id="@+id/ll_mode"
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       android:layout_marginBottom="20dp"
+       android:gravity="center"
+       android:orientation="horizontal">
+       <ImageView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:src="@drawable/round_wb_sunny_24"/>
+       <androidx.appcompat.widget.SwitchCompat
+           android:id="@+id/mode_switch"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:checked="false"/>
+       <ImageView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:src="@drawable/round_nights_stay_24"/>
+
+   </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 <!--</layout>-->
