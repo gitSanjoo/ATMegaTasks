@@ -1,10 +1,10 @@
 package com.sanjoo.atmegatasks
 
 import android.Manifest
-import android.app.LocaleManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.location.Geocoder
 import android.location.Location
 import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +15,7 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import java.util.Locale
 
 class CurrentLocation : AppCompatActivity() {
 
@@ -28,7 +29,7 @@ class CurrentLocation : AppCompatActivity() {
 
         fusedLocationProviderClient=LocationServices.getFusedLocationProviderClient(this)
         latitude=findViewById(R.id.lat)
-        longitude=findViewById(R.id.long)
+        longitude=findViewById(R.id.lon)
         city=findViewById(R.id.city)
 
         getUserLocation()
@@ -61,9 +62,11 @@ class CurrentLocation : AppCompatActivity() {
                         Toast.makeText(applicationContext,"null received ",Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(applicationContext,"successfully ",Toast.LENGTH_SHORT).show()
-                        latitude.text=""+location.latitude
-                        longitude.text=""+location.longitude
-
+                        val latt=location.latitude
+                        latitude.text=""+latt
+                        val longg=location.longitude
+                        longitude.text=""+longg
+                        city.setText(getCityName(latt,longg))
 
                     }
 
@@ -126,5 +129,14 @@ class CurrentLocation : AppCompatActivity() {
             }
         }
     }
+    fun getCityName(lt: Double, lg: Double):String {
+        var cityName = ""
+        var geocoder = Geocoder(this, Locale.getDefault())
+        var address = geocoder.getFromLocation(lt.toDouble(), lg.toDouble(),3)
 
+        if (address != null) {
+            cityName=address.get(0).locality
+        }
+        return cityName
+    }
 }
