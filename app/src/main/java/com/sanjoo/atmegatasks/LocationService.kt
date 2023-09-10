@@ -3,6 +3,7 @@ package com.sanjoo.atmegatasks
 import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
+import android.location.Geocoder
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import com.google.android.gms.location.LocationServices
@@ -13,7 +14,7 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import java.security.Provider.Service
+import java.util.Locale
 
 class LocationService:android.app.Service() {
 
@@ -52,8 +53,11 @@ class LocationService:android.app.Service() {
             .onEach { location ->
                 val lat=location.latitude.toString()
                 val long=location.longitude.toString()
+//                var country=getCountryName(lat,long)
+                var city=getCityName(lat,long)
+
                 val updateNotification=notification.setContentText(
-                    "Location: ($lat,$long )"
+                    "Location: ($lat,$long ,$city)"
                 )
                 notificationManager.notify(1,updateNotification.build())
             }.launchIn(serviceScope)
@@ -74,4 +78,25 @@ class LocationService:android.app.Service() {
     }
 
 
+
+//fun getCountryName(lt: String, lg: String):String {
+//    var countryName = ""
+//    var geocoder = Geocoder(this, Locale.getDefault())
+//    var address = geocoder.getFromLocation(lt.toDouble(), lg.toDouble(),1)
+//
+//    if (address != null) {
+//        countryName=address.get(0).countryName
+//    }
+//    return countryName
+//}
+    fun getCityName(lt: String, lg: String):String {
+    var cityName = ""
+    var geocoder = Geocoder(this, Locale.getDefault())
+    var address = geocoder.getFromLocation(lt.toDouble(), lg.toDouble(),3)
+
+    if (address != null) {
+        cityName=address.get(0).locality
+    }
+    return cityName
+}
 }

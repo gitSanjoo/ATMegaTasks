@@ -30,7 +30,8 @@ class CurrentLocationActivity : AppCompatActivity() {
         btnStop.setOnClickListener(View.OnClickListener {
             Intent(applicationContext,LocationService::class.java).apply {
                 action=LocationService.ACTION_STOP
-                startService(this )
+                startService(this)
+
             }
         })
     }
