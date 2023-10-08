@@ -12,12 +12,12 @@ class CopyFlipkartActivity : AppCompatActivity() {
 
         val card1=findViewById<CardView>(R.id.card_view1)
         card1.setOnClickListener{
-          val i1=  Intent(this,ProductsActivity::class.java)
+          val i1 =  Intent(this,ProductsActivity::class.java)
             startActivity(i1)
         }
         val card2=findViewById<CardView>(R.id.card_view2)
         card2.setOnClickListener{
-          val i2=  Intent(this,ProductsActivity::class.java)
+          val i2 =  Intent(this,NotesActivity::class.java)
             startActivity(i2)
         }
     }

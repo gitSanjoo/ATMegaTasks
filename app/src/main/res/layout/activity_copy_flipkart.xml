@@ -92,9 +92,67 @@
                 android:layout_marginEnd="10dp"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_view1"
+        android:src="@drawable/random"
+        app:layout_constraintBottom_toTopOf="@id/all_icon"
+        />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/all_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <ImageView
+            android:id="@+id/icon1_CpyFlipkart"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:src="@drawable/atmega"
+            android:layout_margin="5dp"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <TextView
+            android:id="@+id/text_1_copyFlipkart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:layout_marginBottom="3dp"
+            app:layout_constraintStart_toStartOf="@+id/icon1_CpyFlipkart"
+            app:layout_constraintEnd_toEndOf="@+id/icon1_CpyFlipkart"
+            app:layout_constraintTop_toBottomOf="@+id/icon1_CpyFlipkart"/>
+
+        <ImageView
+            android:id="@+id/icon2_CpyFlipkart"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:src="@drawable/atmega"
+            android:layout_margin="5dp"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toEndOf="@+id/icon1_CpyFlipkart"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <TextView
+            android:id="@+id/text_2_copyFlipkart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notification"
+            android:layout_marginBottom="3dp"
+            app:layout_constraintStart_toStartOf="@+id/icon2_CpyFlipkart"
+            app:layout_constraintEnd_toEndOf="@+id/icon2_CpyFlipkart"
+            app:layout_constraintTop_toBottomOf="@+id/icon2_CpyFlipkart"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 

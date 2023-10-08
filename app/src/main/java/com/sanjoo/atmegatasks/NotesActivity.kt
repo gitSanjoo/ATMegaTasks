@@ -1,5 +1,6 @@
 package com.sanjoo.atmegatasks
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
@@ -44,7 +45,18 @@ class NotesActivity : AppCompatActivity() {
             val products=Products(img[i],name[i],price[i])
             list.add(products )
         }
-        rv.adapter=ProductAdapter(list)
+        var adap=NotesAdapter(list)
+        rv.adapter=adap
+        adap.setCustomItemSelectListener(object :NotesAdapter.OnItemClickListener{
+            override fun onItemClick(position: Int) {
+                var i3= Intent(this@NotesActivity,ProductDetailActivity::class.java)
+                    .putExtra("Name",name[position])
+                    .putExtra("Image",img[position])
+                    .putExtra("Price",price[position])
+                startActivity(i3)
+            }
+
+        })
     }
 
 }
