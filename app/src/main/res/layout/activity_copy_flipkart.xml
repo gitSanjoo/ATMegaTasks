@@ -121,7 +121,7 @@
         app:layout_constraintStart_toEndOf="@+id/text_brandMall"
         app:layout_constraintEnd_toEndOf="parent"
         android:orientation="horizontal"
-        android:layout_marginStart="35dp"
+        android:layout_marginStart="25dp"
         android:background="#F3E1DFDF"
         app:layout_constraintTop_toBottomOf="@+id/card_view1"
         android:layout_marginTop="25dp">
@@ -164,8 +164,9 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.viewpager.widget.ViewPager
+    <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/offer_viewPager"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="180dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -174,7 +175,7 @@
         android:background="#AFCA91"
         />
     <me.relex.circleindicator.CircleIndicator3
-        android:id="@+id/circleIndicator"
+        android:id="@+id/circleIndicator3"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/offer_viewPager"
@@ -189,23 +190,14 @@
             android:layout_marginBottom="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/offer_viewPager"/>
-    <TextView
-        android:id="@+id/offer_text"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/category_card_recyclerView"
-        app:layout_constraintBottom_toTopOf="@+id/all_offer_recyclerView"
-        android:layout_marginTop="10dp"
-        android:textStyle="bold"
-        android:text="Today's  Deal"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/all_offer_recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="170dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/offer_text"
+        app:layout_constraintTop_toBottomOf="@+id/category_card_recyclerView"
         app:layout_constraintBottom_toTopOf="@+id/all_icon"/>
 
 
@@ -225,6 +217,7 @@
             android:scaleType="fitXY"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/icon2_CpyFlipkart"
+            app:layout_constraintBottom_toTopOf="@+id/text_1_copyFlipkart"
             app:layout_constraintTop_toTopOf="parent"
             />
         <TextView
@@ -237,6 +230,7 @@
             android:layout_marginBottom="3dp"
             app:layout_constraintStart_toStartOf="@+id/icon1_CpyFlipkart"
             app:layout_constraintEnd_toEndOf="@+id/icon1_CpyFlipkart"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/icon1_CpyFlipkart"/>
 
         <ImageView
@@ -248,6 +242,7 @@
             android:scaleType="fitXY"
             app:layout_constraintStart_toEndOf="@+id/icon1_CpyFlipkart"
             app:layout_constraintEnd_toStartOf="@id/icon3_CpyFlipkart"
+            app:layout_constraintBottom_toTopOf="@+id/text_2_copyFlipkart"
             app:layout_constraintTop_toTopOf="parent"
             />
         <TextView
@@ -260,6 +255,7 @@
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@+id/icon2_CpyFlipkart"
             app:layout_constraintEnd_toEndOf="@+id/icon2_CpyFlipkart"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/icon2_CpyFlipkart"/>
 
         <ImageView
@@ -271,6 +267,7 @@
             android:scaleType="fitXY"
             app:layout_constraintStart_toEndOf="@+id/icon2_CpyFlipkart"
             app:layout_constraintEnd_toStartOf="@id/icon4_CpyFlipkart"
+            app:layout_constraintBottom_toTopOf="@+id/text_3_copyFlipkart"
             app:layout_constraintTop_toTopOf="parent"
             />
         <TextView
@@ -283,6 +280,7 @@
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@+id/icon3_CpyFlipkart"
             app:layout_constraintEnd_toEndOf="@+id/icon3_CpyFlipkart"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/icon3_CpyFlipkart"/>
         <ImageView
             android:id="@+id/icon4_CpyFlipkart"
@@ -295,6 +293,7 @@
             android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@+id/icon3_CpyFlipkart"
             app:layout_constraintEnd_toStartOf="@+id/icon5_CpyFlipkart"
+            app:layout_constraintBottom_toTopOf="@+id/text_4_copyFlipkart"
             app:layout_constraintTop_toTopOf="parent"
             />
         <TextView
@@ -307,6 +306,7 @@
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@+id/icon4_CpyFlipkart"
             app:layout_constraintEnd_toEndOf="@+id/icon4_CpyFlipkart"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/icon4_CpyFlipkart"/>
         <ImageView
             android:id="@+id/icon5_CpyFlipkart"
@@ -316,6 +316,7 @@
             android:layout_margin="5dp"
             android:scaleType="fitXY"
             app:layout_constraintStart_toEndOf="@+id/icon4_CpyFlipkart"
+            app:layout_constraintBottom_toTopOf="@+id/text_5_copyFlipkart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             />
@@ -329,6 +330,7 @@
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@+id/icon5_CpyFlipkart"
             app:layout_constraintEnd_toEndOf="@+id/icon5_CpyFlipkart"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/icon5_CpyFlipkart"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

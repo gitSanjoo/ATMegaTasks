@@ -40,7 +40,7 @@ class ProductsActivity : AppCompatActivity() {
          getProductData()
     }
 
-    private fun getProductData() {
+     private fun getProductData() {
         for (i in img.indices){
             val products=Products(img[i],name[i],price[i])
             list.add(products )
