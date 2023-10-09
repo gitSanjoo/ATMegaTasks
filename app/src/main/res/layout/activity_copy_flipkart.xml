@@ -94,31 +94,137 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-    <ImageView
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+    <TextView
+        android:id="@+id/text_brandMall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Brand Mall"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card_view1"
-        android:src="@drawable/random"
-        app:layout_constraintBottom_toTopOf="@id/all_icon"
+        android:layout_marginTop="20dp"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/toggle_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:textOn="ON"
+        android:layout_centerInParent="true"
+        app:layout_constraintTop_toBottomOf="@+id/text_brandMall"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textOff="OFF"
+        android:thumb="@drawable/toggle_btn"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/text_brandMall"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginStart="35dp"
+        android:background="#F3E1DFDF"
+        app:layout_constraintTop_toBottomOf="@+id/card_view1"
+        android:layout_marginTop="25dp">
+        <ImageView
+            android:id="@+id/search_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/search"/>
+        <EditText
+            android:id="@+id/search_text"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/search_img"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <ImageView
+            android:id="@+id/voice_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/search_text"
+            app:layout_constraintEnd_toStartOf="@id/camera_img"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/voice"/>
+        <ImageView
+            android:id="@+id/camera_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/voice_img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/camera"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/offer_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toggle_btn"
+        android:layout_marginTop="5dp"
+        android:background="#AFCA91"
         />
+    <me.relex.circleindicator.CircleIndicator3
+        android:id="@+id/circleIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/offer_viewPager"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:orientation="horizontal"
+            android:id="@+id/category_card_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/offer_viewPager"/>
+    <TextView
+        android:id="@+id/offer_text"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_card_recyclerView"
+        app:layout_constraintBottom_toTopOf="@+id/all_offer_recyclerView"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:text="Today's  Deal"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/all_offer_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/offer_text"
+        app:layout_constraintBottom_toTopOf="@+id/all_icon"/>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/all_icon"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
         <ImageView
             android:id="@+id/icon1_CpyFlipkart"
-            android:layout_width="60dp"
-            android:layout_height="50dp"
-            android:src="@drawable/atmega"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/home"
             android:layout_margin="5dp"
             android:scaleType="fitXY"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/icon2_CpyFlipkart"
             app:layout_constraintTop_toTopOf="parent"
             />
         <TextView
@@ -126,6 +232,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Home"
+            android:textSize="13dp"
+            android:textColor="@color/black"
             android:layout_marginBottom="3dp"
             app:layout_constraintStart_toStartOf="@+id/icon1_CpyFlipkart"
             app:layout_constraintEnd_toEndOf="@+id/icon1_CpyFlipkart"
@@ -133,23 +241,95 @@
 
         <ImageView
             android:id="@+id/icon2_CpyFlipkart"
-            android:layout_width="60dp"
-            android:layout_height="50dp"
-            android:src="@drawable/atmega"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/category"
             android:layout_margin="5dp"
             android:scaleType="fitXY"
             app:layout_constraintStart_toEndOf="@+id/icon1_CpyFlipkart"
+            app:layout_constraintEnd_toStartOf="@id/icon3_CpyFlipkart"
             app:layout_constraintTop_toTopOf="parent"
             />
         <TextView
             android:id="@+id/text_2_copyFlipkart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Notification"
+            android:text="Categories"
             android:layout_marginBottom="3dp"
+            android:textSize="13dp"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@+id/icon2_CpyFlipkart"
             app:layout_constraintEnd_toEndOf="@+id/icon2_CpyFlipkart"
             app:layout_constraintTop_toBottomOf="@+id/icon2_CpyFlipkart"/>
+
+        <ImageView
+            android:id="@+id/icon3_CpyFlipkart"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/notification"
+            android:layout_margin="5dp"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toEndOf="@+id/icon2_CpyFlipkart"
+            app:layout_constraintEnd_toStartOf="@id/icon4_CpyFlipkart"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <TextView
+            android:id="@+id/text_3_copyFlipkart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notification"
+            android:layout_marginBottom="3dp"
+            android:textSize="13dp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/icon3_CpyFlipkart"
+            app:layout_constraintEnd_toEndOf="@+id/icon3_CpyFlipkart"
+            app:layout_constraintTop_toBottomOf="@+id/icon3_CpyFlipkart"/>
+        <ImageView
+            android:id="@+id/icon4_CpyFlipkart"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/account"
+            android:layout_margin="5dp"
+            android:scaleType="fitXY"
+            android:textSize="13dp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/icon3_CpyFlipkart"
+            app:layout_constraintEnd_toStartOf="@+id/icon5_CpyFlipkart"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <TextView
+            android:id="@+id/text_4_copyFlipkart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Account"
+            android:layout_marginBottom="3dp"
+            android:textSize="13dp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/icon4_CpyFlipkart"
+            app:layout_constraintEnd_toEndOf="@+id/icon4_CpyFlipkart"
+            app:layout_constraintTop_toBottomOf="@+id/icon4_CpyFlipkart"/>
+        <ImageView
+            android:id="@+id/icon5_CpyFlipkart"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/cart"
+            android:layout_margin="5dp"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toEndOf="@+id/icon4_CpyFlipkart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <TextView
+            android:id="@+id/text_5_copyFlipkart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cart"
+            android:layout_marginBottom="3dp"
+            android:textSize="13dp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/icon5_CpyFlipkart"
+            app:layout_constraintEnd_toEndOf="@+id/icon5_CpyFlipkart"
+            app:layout_constraintTop_toBottomOf="@+id/icon5_CpyFlipkart"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
