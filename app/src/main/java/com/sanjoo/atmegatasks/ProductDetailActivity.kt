@@ -20,11 +20,11 @@ class ProductDetailActivity : AppCompatActivity() {
 
         val nameDetail=intent.getStringExtra("Name")
         val priceDetail=intent.getStringExtra("Price")
-        val imageDetail=intent.getStringExtra("Image")
+        val imageDetail=intent.getIntExtra("Image",0)
 
         name.text=nameDetail
         price.text=priceDetail
-//        image.setImageResource(imageDetail.)
+        image.setImageResource(imageDetail)
 
 //        val nameText=findViewById<TextView>(R.id.nameDetail).apply {
 //            text=nameDetail
