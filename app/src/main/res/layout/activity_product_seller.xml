@@ -54,6 +54,18 @@
             android:background="#E8E5E5"/>
     </androidx.cardview.widget.CardView>
 
+    <Button
+        android:id="@+id/SendNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Show Notification"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
