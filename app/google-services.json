@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "437192196580",
+    "project_id": "quiz-application-80758",
+    "storage_bucket": "quiz-application-80758.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437192196580:android:116a02b9909da9b751c7f1",
+        "android_client_info": {
+          "package_name": "com.dev_droid.quizapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "437192196580-b6o965eei7a1tlgq3ntbapius250tq6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNWLojr8fbwBysyJQjto8PEx7KyWglc74"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "437192196580-b6o965eei7a1tlgq3ntbapius250tq6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437192196580:android:8856078dabe6340751c7f1",
+        "android_client_info": {
+          "package_name": "com.sanjoo.atmegatasks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "437192196580-b6o965eei7a1tlgq3ntbapius250tq6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNWLojr8fbwBysyJQjto8PEx7KyWglc74"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "437192196580-b6o965eei7a1tlgq3ntbapius250tq6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
